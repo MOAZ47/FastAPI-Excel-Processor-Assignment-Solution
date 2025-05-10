@@ -3,7 +3,7 @@
 ## Insights
 ### Potential Improvements
 <ul>
-  <li><b>UI Integration</b></li><br>
+  <li><b>UI Integration</b></li>
   <p>Adding a simple Streamlit or Dash interface would allow non-technical users to upload Excel files and view results interactively</p>
 </ul>
 
