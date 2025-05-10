@@ -5,6 +5,8 @@
 <ul>
   <li><b>UI Integration</b></li>
   <p>Adding a simple Streamlit or Dash interface would allow non-technical users to upload Excel files and view results interactively</p>
+  <li><b>ETL</b></li>
+  <p>A pure Pythonic ETL can be built around this, where the data is uploaded on database after extraction and various transformations.</p>
 </ul>
 
 
