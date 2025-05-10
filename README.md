@@ -1,5 +1,14 @@
 # FastAPI-Excel-Processor-Assignment-Solution
 
+## Insights
+### Potential Improvements
+<ul>
+  <li><b>UI Integration</b></li><br>
+  <p>Adding a simple Streamlit or Dash interface would allow non-technical users to upload Excel files and view results interactively</p>
+</ul>
+
+
+
 ## Testing
 Import the Postman collection from:
 `ExcelProcessor_API.postman_collection.json`
