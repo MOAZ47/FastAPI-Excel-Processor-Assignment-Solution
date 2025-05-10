@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "08f73ad4-5914-4eb6-9e19-30702a6a4990",
+		"name": "ExcelProcessor_API",
+		"description": "StartFragment\n\n```\nTest suite for Excel Data Processor API\nBase URL: http://localhost:9090\n\n ```\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13991919"
+	},
+	"item": [
+		{
+			"name": "1. List All Tables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check status code\r",
+							"pm.test(\"Status 200 - Success\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check response contains expected tables\r",
+							"pm.test(\"Contains INITIAL INVESTMENT\", () => {\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.expect(jsonData.tables).to.include(\"INITIAL INVESTMENT\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/list_tables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"list_tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Table Details - Valid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status 200 - Valid Table\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Has Expected Rows\", () => {\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.expect(jsonData.row_names).to.include(\"Initial Investment\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/get_table_details?table_name=INITIAL%20INVESTMENT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"get_table_details"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "INITIAL%20INVESTMENT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Calculate Row Sum - Valid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Returns Numeric Sum\", () => {\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.expect(jsonData.sum).to.be.a('number');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/row_sum?table_name=INITIAL%20INVESTMENT&row_name=Opportunity%20Cost%20%28if%20any%29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"row_sum"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "INITIAL%20INVESTMENT"
+						},
+						{
+							"key": "row_name",
+							"value": "Opportunity%20Cost%20%28if%20any%29"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
