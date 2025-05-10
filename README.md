@@ -2,7 +2,7 @@
 
 ## Testing
 Import the Postman collection from:
-`CapitalBudgetingAPI.postman_collection.json`
+`ExcelProcessor_API.postman_collection.json`
 
 Or run these curl commands:
 ```bash
