@@ -3,13 +3,21 @@
 ## Insights
 ### Potential Improvements
 <ul>
-  <li><b>UI Integration</b></li>
+  <li><b>Caching</b></li>
+  <p> The Parsing mechanism in the code is computationally intensive. Caching would improve performance.</p>
+  <li><b>Frontend Integration</b></li>
   <p>Adding a simple Streamlit or Dash interface would allow non-technical users to upload Excel files and view results interactively</p>
   <li><b>ETL</b></li>
   <p>A pure Pythonic ETL can be built around this, where the data is uploaded on database after extraction and various transformations.</p>
 </ul>
 
-
+### Missed Edge Cases
+<ul>
+  <li><b>Mixed Data Types in Columns</b></li>
+  <p>Columns with mixed data types (e.g., strings and numbers) could lead to unexpected results during type-based analysis or aggregation.</p>
+  <li><b>Data Parsing</b></li>
+  <p>Current Implementation expects a fixed format, and will fail if the format of data file changes</p>
+</ul>
 
 ## Testing
 Import the Postman collection from:
